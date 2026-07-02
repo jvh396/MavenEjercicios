@@ -149,23 +149,24 @@
 			</plugin>
 
  			<plugin>
-				<groupId>org.owasp</groupId>
-				<artifactId>dependency-check-maven</artifactId>
-				<version>6.1.5</version>
-				<configuration>
-					<skipTestScope>false</skipTestScope>
-					<formats>
-						<format>HTML</format>
-						<format>XML</format>
-					</formats> 
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>aggregate</report>
-						</reports>
-					</reportSet>
-				</reportSets>
+			    <groupId>org.owasp</groupId>
+			    <artifactId>dependency-check-maven</artifactId>
+			    <version>12.1.0</version>
+			    <configuration>
+			        <skipTestScope>false</skipTestScope>
+			        <formats>
+			            <format>HTML</format>
+			            <format>XML</format>
+			        </formats>
+			        <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+			    </configuration>
+			    <reportSets>
+			        <reportSet>
+			            <reports>
+			                <report>aggregate</report>
+			            </reports>
+			        </reportSet>
+			    </reportSets>
 			</plugin>
 
 
