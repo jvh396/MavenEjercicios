@@ -138,6 +138,14 @@
 					</rulesets>
 
 				</configuration>
+				<reportSets>
+		        <reportSet>
+		            <reports>
+		                <report>pmd</report>
+		                <report>cpd</report>
+		            </reports>
+		        </reportSet>
+		    </reportSets>
 			</plugin>
 
 			
