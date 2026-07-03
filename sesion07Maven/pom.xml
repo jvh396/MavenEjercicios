@@ -15,6 +15,47 @@
 					<testSourceDirectory>test</testSourceDirectory>
 		<plugins>
 			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>findbugs-maven-plugin</artifactId>
+			    <version>3.0.5</version>
+			    <configuration>
+			        <effort>Max</effort>
+			        <threshold>Low</threshold>
+			        <xmlOutput>true</xmlOutput>
+			        <failOnError>false</failOnError>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <id>findbugs-check</id>
+			            <phase>verify</phase>
+			            <goals>
+			                <goal>check</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-pmd-plugin</artifactId>
+			    <version>3.21.2</version>
+			    <configuration>
+			        <linkXRef>false</linkXRef>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <id>pmd-check</id>
+			            <phase>verify</phase>
+			            <goals>
+			                <goal>pmd</goal>
+			                <goal>cpd</goal>
+			            </goals>
+			            <configuration>
+			                <failOnViolation>false</failOnViolation>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
+			<plugin>
 			    <groupId>com.github.spotbugs</groupId>
 			    <artifactId>spotbugs-maven-plugin</artifactId>
 			    <version>4.8.6.5</version>
